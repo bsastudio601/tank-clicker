@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="tankclicker"
+run/main_scene="uid://btnju7xju1khv"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=256
+window/size/viewport_height=144
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

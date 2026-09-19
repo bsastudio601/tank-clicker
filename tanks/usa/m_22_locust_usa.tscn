@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://u4c5rmjfce2l"]
+
+[ext_resource type="Texture2D" uid="uid://d31gd2tukcils" path="res://sprites/usa_tanks/M22_Locust_USA.png" id="1_ocvww"]
+[ext_resource type="Script" uid="uid://dq4arf0rahj06" path="res://tanks/tank_data.gd" id="1_wci21"]
+[ext_resource type="PackedScene" uid="uid://dr4nela2nk334" path="res://tanks/shells/ap_shell.tscn" id="2_iuk4g"]
+
+[node name="m22_locust_usa" type="Node2D" unique_id=1753621089]
+script = ExtResource("1_wci21")
+shell_scene = ExtResource("2_iuk4g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1633724888]
+position = Vector2(0, -4)
+texture = ExtResource("1_ocvww")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1376823505]
+position = Vector2(10, -8)
+
+[node name="Timer" type="Timer" parent="." unique_id=1020092604]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

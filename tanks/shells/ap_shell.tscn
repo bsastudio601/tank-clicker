@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dr4nela2nk334"]
+
+[ext_resource type="Script" uid="uid://cdjcv2mv3nk4i" path="res://tanks/shells/shell.gd" id="1_j5cne"]
+[ext_resource type="Texture2D" uid="uid://lev15nwtc274" path="res://sprites/shells_fire_sprite/shell_ap.png" id="1_x2iyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw5y0"]
+size = Vector2(4, 1)
+
+[node name="ap_shell" type="Area2D" unique_id=1415351529]
+collision_layer = 2
+script = ExtResource("1_j5cne")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1800554272]
+position = Vector2(2, 0)
+texture = ExtResource("1_x2iyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=913418279]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_sw5y0")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

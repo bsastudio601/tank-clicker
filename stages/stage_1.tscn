@@ -1,3 +1,49 @@
-[gd_scene format=3 uid="uid://btnju7xju1khv"]
+[gd_scene format=4 uid="uid://btnju7xju1khv"]
+
+[ext_resource type="PackedScene" uid="uid://bphis4tr8vjgm" path="res://background/bg_stage_1.tscn" id="1_p6prp"]
+[ext_resource type="Texture2D" uid="uid://bwqsxbwwcmpps" path="res://sprites/scene_sprites/ground_and_flora.png" id="2_40wcd"]
+[ext_resource type="Script" uid="uid://bsxw8b0aqv2gw" path="res://tanks/tank_manager.gd" id="3_40wcd"]
+[ext_resource type="PackedScene" uid="uid://u4c5rmjfce2l" path="res://tanks/usa/m_22_locust_usa.tscn" id="4_yor2l"]
+[ext_resource type="Script" uid="uid://dbkn782f70fj0" path="res://tanks/target_manager.gd" id="5_nndgx"]
+[ext_resource type="PackedScene" uid="uid://dqi11vahwqqe6" path="res://tanks/targets/wooden_target_1.tscn" id="6_0p8va"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40wcd"]
+texture = ExtResource("2_40wcd")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t4kkl"]
+sources/0 = SubResource("TileSetAtlasSource_40wcd")
 
 [node name="stage_1" type="Node2D" unique_id=1887337810]
+
+[node name="bg_stage_1" parent="." unique_id=1000390451 instance=ExtResource("1_p6prp")]
+
+[node name="base_layer" type="Node" parent="." unique_id=1366378070]
+
+[node name="ground" type="TileMapLayer" parent="base_layer" unique_id=1563373444]
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAAAAAABAAgAAAACAAAAAAACAAgAAAAAAAAAAAADAAgAAAABAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAACAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAABAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAABAAAAAAAKAAgAAAACAAAAAAALAAgAAAAAAAAAAAAMAAgAAAACAAAAAAANAAgAAAABAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_t4kkl")
+
+[node name="cactus" type="TileMapLayer" parent="base_layer" unique_id=1081440827]
+tile_map_data = PackedByteArray("AAAAAAcAAAAFAAAAAAABAAcAAAAFAAAAAAAHAAcAAAAGAAAAAAAMAAcAAAAFAAAAAAAOAAcAAAAGAAAAAAA=")
+tile_set = SubResource("TileSet_t4kkl")
+
+[node name="bush" type="TileMapLayer" parent="base_layer" unique_id=1122824563]
+tile_map_data = PackedByteArray("AAAAAAcAAAAEAAAAAAABAAcAAAAEAAAAAAACAAcAAAADAAAAAAAFAAcAAAAEAAAAAAAGAAcAAAADAAAAAAAHAAcAAAAEAAAAAAAIAAcAAAAEAAAAAAAJAAcAAAAEAAAAAAAKAAcAAAAEAAAAAAALAAcAAAAEAAAAAAAMAAcAAAAEAAAAAAANAAcAAAADAAAAAAAOAAcAAAAEAAAAAAAPAAcAAAADAAAAAAA=")
+tile_set = SubResource("TileSet_t4kkl")
+
+[node name="tank_manager" type="Node2D" parent="." unique_id=1148254171]
+position = Vector2(64, 128)
+script = ExtResource("3_40wcd")
+starting_tank = ExtResource("4_yor2l")
+
+[node name="target_manager" type="Node2D" parent="." unique_id=758161985]
+position = Vector2(181, 128)
+script = ExtResource("5_nndgx")
+starting_target = ExtResource("6_0p8va")

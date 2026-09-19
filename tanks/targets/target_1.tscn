@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bxjoq0rc5brk4"]
+
+[ext_resource type="Texture2D" uid="uid://83hthjfa0qa5" path="res://sprites/tank_target/wood_target_l1.png" id="1_kaw0k"]
+[ext_resource type="Script" uid="uid://cv50i53bu4svr" path="res://tanks/targets/target_data.gd" id="1_sw5y0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b30ca"]
+size = Vector2(6, 12)
+
+[node name="target_1" type="Node2D" unique_id=871148323]
+script = ExtResource("1_sw5y0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1942718642]
+position = Vector2(6, -6)
+texture = ExtResource("1_kaw0k")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1461051350]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=928406963]
+position = Vector2(3, -6)
+shape = SubResource("RectangleShape2D_b30ca")

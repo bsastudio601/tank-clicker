@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://qqho6c42dd41"]
+
+[ext_resource type="Script" uid="uid://dq4arf0rahj06" path="res://tanks/tank_data.gd" id="1_52c77"]
+[ext_resource type="Texture2D" uid="uid://bbk1cmfijxqfy" path="res://sprites/usa_tanks/M4_Shermen_USA.png" id="1_egigw"]
+[ext_resource type="PackedScene" uid="uid://dr4nela2nk334" path="res://tanks/shells/ap_shell.tscn" id="2_kcqqq"]
+
+[node name="m4_shermem_usa" type="Node2D" unique_id=416028453]
+script = ExtResource("1_52c77")
+tank_name = "m4_usa"
+fire_rate = 3.0
+shell_scene = ExtResource("2_kcqqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108091428]
+position = Vector2(0, -5)
+texture = ExtResource("1_egigw")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1600264331]
+position = Vector2(10, -11)
+
+[node name="Timer" type="Timer" parent="." unique_id=571406879]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
