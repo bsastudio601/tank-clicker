@@ -9,6 +9,11 @@ size = Vector2(4, 1)
 [node name="ap_shell" type="Area2D" unique_id=1415351529]
 collision_layer = 2
 script = ExtResource("1_j5cne")
+rewards = {
+"accuracy": 5,
+"damage": 10,
+"vitality": 1
+}
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1800554272]
 position = Vector2(2, 0)

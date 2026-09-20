@@ -6,6 +6,7 @@
 
 [node name="m22_locust_usa" type="Node2D" unique_id=1753621089]
 script = ExtResource("1_wci21")
+fire_rate = 5.0
 shell_scene = ExtResource("2_iuk4g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1633724888]

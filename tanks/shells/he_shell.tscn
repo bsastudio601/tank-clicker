@@ -3,20 +3,19 @@
 [ext_resource type="Script" uid="uid://cdjcv2mv3nk4i" path="res://tanks/shells/shell.gd" id="1_5tvq0"]
 [ext_resource type="Texture2D" uid="uid://igja2u6bv12j" path="res://sprites/shells_fire_sprite/shell_he.png" id="1_ubsyr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b30ca"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4kkl"]
 size = Vector2(4, 1)
 
-[node name="he_shell" type="Node2D" unique_id=2032389095]
+[node name="he_shell" type="Area2D" unique_id=251041965]
 script = ExtResource("1_5tvq0")
 shell_name = "HE"
-damage = 20.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1159997283]
 position = Vector2(2, 0)
 texture = ExtResource("1_ubsyr")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1164053485]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2069644620]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=100223647]
 position = Vector2(2, 0.5)
-shape = SubResource("RectangleShape2D_b30ca")
+shape = SubResource("RectangleShape2D_t4kkl")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

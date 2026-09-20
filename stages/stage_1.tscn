@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://u4c5rmjfce2l" path="res://tanks/usa/m_22_locust_usa.tscn" id="4_yor2l"]
 [ext_resource type="Script" uid="uid://dbkn782f70fj0" path="res://tanks/target_manager.gd" id="5_nndgx"]
 [ext_resource type="PackedScene" uid="uid://dqi11vahwqqe6" path="res://tanks/targets/wooden_target_1.tscn" id="6_0p8va"]
+[ext_resource type="FontFile" uid="uid://bf5q81fbv8uay" path="res://fonts/PixelifySans-Regular.ttf" id="7_6oaam"]
+[ext_resource type="Texture2D" uid="uid://b4wjthypoceun" path="res://sprites/Ui/button_bg_1.png" id="8_lugph"]
+[ext_resource type="Texture2D" uid="uid://degfsybc67xy3" path="res://sprites/Ui/button_bg_1_hover1.png" id="9_lugph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40wcd"]
 texture = ExtResource("2_40wcd")
@@ -19,6 +22,15 @@ texture = ExtResource("2_40wcd")
 
 [sub_resource type="TileSet" id="TileSet_t4kkl"]
 sources/0 = SubResource("TileSetAtlasSource_40wcd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yfgws"]
+texture = ExtResource("8_lugph")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18igh"]
+texture = ExtResource("9_lugph")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj8rn"]
+texture = ExtResource("9_lugph")
 
 [node name="stage_1" type="Node2D" unique_id=1887337810]
 
@@ -43,7 +55,25 @@ position = Vector2(64, 128)
 script = ExtResource("3_40wcd")
 starting_tank = ExtResource("4_yor2l")
 
-[node name="target_manager" type="Node2D" parent="." unique_id=758161985]
+[node name="target_manager" type="Node2D" parent="." unique_id=758161985 node_paths=PackedStringArray("build_target")]
 position = Vector2(181, 128)
 script = ExtResource("5_nndgx")
 starting_target = ExtResource("6_0p8va")
+build_target = NodePath("../UI/build_target")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1318321995]
+
+[node name="build_target" type="Button" parent="UI" unique_id=1764963113]
+offset_left = 175.0
+offset_top = 118.0
+offset_right = 197.0
+offset_bottom = 124.0
+theme_override_fonts/font = ExtResource("7_6oaam")
+theme_override_font_sizes/font_size = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_yfgws")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_18igh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sj8rn")
+text = "Build Target"
+icon_alignment = 1
+
+[connection signal="pressed" from="UI/build_target" to="target_manager" method="_on_build_target_pressed"]
