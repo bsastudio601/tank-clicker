@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://duh46gsh88c0h"]
+
+[ext_resource type="Texture2D" uid="uid://c7t0j54j5ga6t" path="res://sprites/Ui/tank_menu_bg.png" id="1_waogc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6aiu"]
+texture = ExtResource("1_waogc")
+
+[node name="TankMenu" type="PanelContainer" unique_id=1087093606]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -40.0
+offset_right = 96.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_m6aiu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=251397810]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer" unique_id=991322416]
+layout_mode = 2
+text = "qwe"
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1340729590]
+layout_mode = 2
+text = "qwe"
+
+[node name="Label3" type="Label" parent="HBoxContainer" unique_id=2075808852]
+layout_mode = 2
+text = "qwe"

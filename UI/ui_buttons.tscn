@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://caroh3ts0lvhc"]
+
+[ext_resource type="Script" uid="uid://dxwhfy13d8ljp" path="res://stages/ui_buttons.gd" id="1_mom51"]
+[ext_resource type="Texture2D" uid="uid://w3clnxu7g5xh" path="res://sprites/Ui/tank_menu_1.png" id="2_6pklk"]
+[ext_resource type="Texture2D" uid="uid://cy38xdealk8ri" path="res://sprites/Ui/tank_menu_2.png" id="3_d4xf2"]
+
+[node name="ui_buttons" type="CanvasLayer" unique_id=1766786371]
+script = ExtResource("1_mom51")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=112398585]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -19.0
+offset_right = 8.0000305
+offset_bottom = -2.9998474
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_6pklk")
+texture_pressed = ExtResource("3_d4xf2")
+texture_hover = ExtResource("3_d4xf2")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

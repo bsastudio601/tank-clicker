@@ -9,6 +9,8 @@
 [ext_resource type="FontFile" uid="uid://bf5q81fbv8uay" path="res://fonts/PixelifySans-Regular.ttf" id="7_6oaam"]
 [ext_resource type="Texture2D" uid="uid://b4wjthypoceun" path="res://sprites/Ui/button_bg_1.png" id="8_lugph"]
 [ext_resource type="Texture2D" uid="uid://degfsybc67xy3" path="res://sprites/Ui/button_bg_1_hover1.png" id="9_lugph"]
+[ext_resource type="PackedScene" uid="uid://caroh3ts0lvhc" path="res://UI/ui_buttons.tscn" id="10_18igh"]
+[ext_resource type="PackedScene" uid="uid://duh46gsh88c0h" path="res://UI/tank_menu.tscn" id="11_o4n7p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40wcd"]
 texture = ExtResource("2_40wcd")
@@ -59,11 +61,11 @@ starting_tank = ExtResource("4_yor2l")
 position = Vector2(181, 128)
 script = ExtResource("5_nndgx")
 starting_target = ExtResource("6_0p8va")
-build_target = NodePath("../UI/build_target")
+build_target = NodePath("../Target UI/build_target")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1318321995]
+[node name="Target UI" type="CanvasLayer" parent="." unique_id=1318321995]
 
-[node name="build_target" type="Button" parent="UI" unique_id=1764963113]
+[node name="build_target" type="Button" parent="Target UI" unique_id=1764963113]
 offset_left = 175.0
 offset_top = 118.0
 offset_right = 197.0
@@ -76,4 +78,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_sj8rn")
 text = "Build Target"
 icon_alignment = 1
 
-[connection signal="pressed" from="UI/build_target" to="target_manager" method="_on_build_target_pressed"]
+[node name="ui_buttons" parent="." unique_id=1766786371 instance=ExtResource("10_18igh")]
+ui_menu = ExtResource("11_o4n7p")
+
+[connection signal="pressed" from="Target UI/build_target" to="target_manager" method="_on_build_target_pressed"]
